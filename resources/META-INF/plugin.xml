@@ -13,12 +13,12 @@
 
     <resource-bundle>messages.SamplePluginBundle</resource-bundle>
 
-    <!--    <actions>-->
-    <!--        <action id="org.jetbrains.scala.samples.actions.PopupDialogAction"-->
-    <!--                class="org.jetbrains.scala.samples.actions.PopupDialogAction">-->
-    <!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
-    <!--        </action>-->
-    <!--    </actions>-->
+    <actions>
+        <action id="org.jetbrains.scala.samples.actions.PopupDialogAction"
+                class="org.jetbrains.scala.samples.actions.PopupDialogAction">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 
     <!--    <applicationListeners>-->
     <!--        <listener class="org.jetbrains.scala.samples.listeners.FileOpenedListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>-->
@@ -33,6 +33,10 @@
                 anchor="left"
                 secondary="true"
                 icon="AllIcons.General.Modified"/>
+        <toolWindow factoryClass="org.jetbrains.scala.samples.ui.TimeZoneTableWindow" id="TimeZoneTableWindow"
+                    anchor="right"
+                    secondary="true"
+                    icon="AllIcons.Actions.ShowReadAccess"/>
     </extensions>
 
 </idea-plugin>

@@ -10,7 +10,7 @@ import com.intellij.uiDesigner.core.{GridConstraints, GridLayoutManager}
 
 import java.util.Calendar
 import javax.swing.{ImageIcon, JButton, JLabel, JPanel}
-import scala.swing.*
+import scala.swing._
 
 class MyToolWindowFactory extends ToolWindowFactory {
 
