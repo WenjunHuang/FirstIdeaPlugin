@@ -15,7 +15,8 @@
 
     <actions>
         <action id="org.jetbrains.scala.samples.actions.PopupDialogAction"
-                class="org.jetbrains.scala.samples.actions.PopupDialogAction">
+                class="org.jetbrains.scala.samples.actions.PopupDialogAction"
+                icon="AllIcons.Nodes.IdeaModule">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
