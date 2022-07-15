@@ -1,0 +1,16 @@
+{
+parserClass="com.github.wenjunhuang.restTools.request.parser.RESTRequestParser"
+extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+psiPackage="com.github.wenjunhuang.restTools.request.psi"
+psiClassPrefix="RESTRequest"
+psiImplClassSuffix="Impl"
+psiImplPackage="com.github.wenjunhuang.restTools.request.psi.impl"
+
+elementTypeHolderClass="com.github.wenjunhuang.restTools.request.psi.RESTRequestElementTypes"
+elementTypeClass="com.github.wenjunhuang.restTools.request.psi.RESTRequestElementType"
+tokenTypeClass="com.github.wenjunhuang.restTools.request.psi.RESTRequestTokenType"
+}
+
+simpleFile ::= item_*
+private item_ ::= (property|COMMENT|CRLF)
+property ::= (KEY? SEPARATOR VALUE?)|KEY

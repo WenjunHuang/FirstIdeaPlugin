@@ -1,43 +1,38 @@
 <idea-plugin>
-    <id>me.and.co.my.awesome.framework</id>
-    <name>My Awesome Framework</name>
+    <id>com.github.wenjunhuang.RESTTools</id>
+    <name>A Simple Http Test Client</name>
     <version>0.0.1-SNAPSHOT</version>
-    <vendor>Me and Co</vendor>
+    <vendor>jatom-百年酒馆</vendor>
 
-    <description>A new plugin for IntelliJ platform written in Scala and built with SBT</description>
+    <description>A simple tool for testing restful api.</description>
 
     <idea-version since-build="203.0"/>
 
-    <!--    <depends>com.intellij.modules.platform</depends>-->
-    <!--    <depends>com.intellij.properties</depends>-->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.xml</depends>
+    <depends>org.intellij.intelliLang</depends>
+    <depends>com.intellij.platform.images</depends>
 
-    <resource-bundle>messages.SamplePluginBundle</resource-bundle>
-
-    <actions>
-        <action id="org.jetbrains.scala.samples.actions.PopupDialogAction"
-                class="org.jetbrains.scala.samples.actions.PopupDialogAction"
-                icon="AllIcons.Nodes.IdeaModule">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-    </actions>
-
-    <!--    <applicationListeners>-->
-    <!--        <listener class="org.jetbrains.scala.samples.listeners.FileOpenedListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>-->
-    <!--    </applicationListeners>-->
-
+    <resource-bundle>messages.RESTToolsBundle</resource-bundle>
+    
     <extensions defaultExtensionNs="com.intellij">
-        <!--        <notificationGroup displayType="BALLOON" id="My Plugin Notification" />-->
-        <!--        <completion.contributor implementationClass="org.jetbrains.scala.samples.completion.SimpleCompletionContributor" language="Properties"/>-->
-        <toolWindow
-                factoryClass="org.jetbrains.scala.samples.ui.MyToolWindowFactory"
-                id="MyToolWindow"
-                anchor="left"
-                secondary="true"
-                icon="AllIcons.General.Modified"/>
-        <toolWindow factoryClass="org.jetbrains.scala.samples.ui.TimeZoneTableWindow" id="TimeZoneTableWindow"
-                    anchor="right"
-                    secondary="true"
-                    icon="AllIcons.Actions.ShowReadAccess"/>
+        <fileType name="REST Request"
+                  implementationClass="com.github.wenjunhuang.restTools.request.RESTRequestFileType$"
+                  fieldName="MODULE$"
+                  language="REST Request"
+                  extensions="rest"/>
+        <editorHighlighterProvider
+                filetype="REST Request"
+                implementationClass=""/>
     </extensions>
 
+    <actions>
+        <group id="RESTToolsGroup"
+               icon="AllIcons.General.Web"
+               popup="true">
+            <action id="PopupDialogAction"
+                    class="com.github.wenjunhuang.restTools.actions.PopupDialogAction"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+    </actions>
 </idea-plugin>

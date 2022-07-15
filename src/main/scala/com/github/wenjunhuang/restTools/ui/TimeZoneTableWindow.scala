@@ -1,4 +1,4 @@
-package org.jetbrains.scala.samples.ui
+package com.github.wenjunhuang.restTools.ui
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.{ToolWindow, ToolWindowFactory}
